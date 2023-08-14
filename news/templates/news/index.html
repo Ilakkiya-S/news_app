@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Get the latest updates!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+	
+</head>
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Get the latest updates!
+                </h1>
+            </div>
+			<div class="box" style="background-image:https://img.freepik.com/free-vector/blue-sky-with-shiny-clouds-background_1017-23279.jpg?w=900&t=st=1683996387~exp=1683996987~hmac=4387162129b43af5d40cb9084f44df0a85c5b4f50b64a28da20e11e7a2332762">
+        </div>
+    </section>
+    
+<section class="section">
+    <div class="container">
+        <div class="columns is-multiline is-mobile">
+            {% for news in news_data %}
+                <div class="column is-one-third">
+                    <div class="box" style="background-image: url({{ image_urls|random }});">
+                        <article class="media">
+                            <div class="media-left">
+                                <figure class="image is-25x25">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <span class="title">{{news.title}}</span>
+                                        <br>
+                                        <span class="subtitle">{{news.author}}</span>
+                                        <br> {{news.description}}
+                                        {{news.url}}
+                                    </p>
+                                    <style>
+                                    .hero, .box {
+                                        background-image: url('https://images.pexels.com/photos/8926387/pexels-photo-8926387.jpeg?auto=compress&cs=tinysrgb&w=600');
+                                        background-size: cover;
+                                    }
+                                    </style>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+    <footer class="footer">
+    </footer>
+
+</body>
+</html>
